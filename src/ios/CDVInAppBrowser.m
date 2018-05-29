@@ -70,7 +70,9 @@
 
 - (BOOL) isSystemUrl:(NSURL*)url
 {
-	if ([[url host] isEqualToString:@"itunes.apple.com"]) {
+	if ([urlHost isEqualToString:@"itunes.apple.com"]
+            || [urlHost hasPrefix:@"https://www.facebook.com/sharer"]
+            || [urlHost hasPrefix:@"https://twitter.com/share"]) {
 		return YES;
 	}
 
